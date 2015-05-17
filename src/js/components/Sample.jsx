@@ -1,4 +1,5 @@
 const React = require('react');
+const Card = require('./Card.jsx');
 
 let Sample = React.createClass({
   propTypes: {
@@ -29,9 +30,11 @@ let Sample = React.createClass({
   },
 
   render() {
+    let card = this.state;
     return (
       <div>
         <p>Hello, {this.props.app.title}!</p>
+        <Card card={card} />
         <div>{this.state.count}</div>
         <button onClick={this.onClick}>Click!</button>
       </div>
