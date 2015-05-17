@@ -1,6 +1,11 @@
 const React = require('react');
 
 let Card = React.createClass({
+  propTypes: {
+    onIncrement: React.PropTypes.func.isRequired,
+    onReset: React.PropTypes.func.isRequired
+  },
+
   getInitialState() {
     return {};
   },
@@ -8,9 +13,21 @@ let Card = React.createClass({
   componentDidMount() {
   },
 
+  onClick() {
+    this.props.onIncrement();
+  },
+
+  reset() {
+    this.props.onReset();
+  },
+
   render() {
     return (
-      <p>Count: {this.props.card.count}</p>
+      <div>
+        <p>Count: {this.props.card.count}</p>
+        <button type="button" onClick={this.onClick}>Click! (Child)</button>
+        <button type="button" onClick={this.reset}>Reset</button>
+      </div>
     );
   }
 });

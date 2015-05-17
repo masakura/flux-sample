@@ -23,7 +23,15 @@ let Sample = React.createClass({
   },
 
   onClick() {
+    this.increment();
+  },
+
+  increment() {
     this.setState({count: this.state.count + 1});
+  },
+
+  reset() {
+    this.setState({count: 0});
   },
 
   componentDidMount() {
@@ -34,7 +42,7 @@ let Sample = React.createClass({
     return (
       <div>
         <p>Hello, {this.props.app.title}!</p>
-        <Card card={card} />
+        <Card card={card} onIncrement={this.increment} onReset={this.reset} />
         <div>{this.state.count}</div>
         <button onClick={this.onClick}>Click!</button>
       </div>
