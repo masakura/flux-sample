@@ -5,4 +5,6 @@ var app = {
   title: 'React'
 };
 
-React.render(<Sample app={app} />, document.getElementById('main'));
+var component = React.render(<Sample app={app} />, document.getElementById('main'));
+
+component.setProps({app: {title: 'New Title'}});
