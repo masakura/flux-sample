@@ -7,6 +7,14 @@ let Sample = React.createClass({
     })
   },
 
+  getDefaultProps: function() {
+    return {
+      app: {
+        title: 'Default'
+      }
+    }
+  },
+
   getInitialState() {
     return {
       count: 0
