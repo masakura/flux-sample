@@ -11,6 +11,11 @@ let Card = React.createClass({
   },
 
   componentDidMount() {
+    console.log('DidMount');
+  },
+
+  componentWillMount() {
+    console.log('WillMount');
   },
 
   onClick() {
